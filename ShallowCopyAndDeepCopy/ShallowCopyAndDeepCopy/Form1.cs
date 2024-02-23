@@ -65,22 +65,22 @@ namespace ShallowCopyAndDeepCopy
         private void fEqual()
         {
             cCopySample cOrgRef = cOrg;   // cOrg를 cOrgRef에 참조(연결)해 준다.
-            fcopy(cOrgRef);
+            fCopy(cOrgRef);
         }
 
         private void fShallowCopy()
         {
             cCopySample cShallow = (cCopySample)cOrg.ShallowCopy();   // 얕은 복사 진행 (복사본 객체 cShallow 생성)
-            fcopy(cShallow);
+            fCopy(cShallow);
         }
 
         private void fDeepCopy()
         {
             cCopySample cDeep = (cCopySample)cOrg.Clone();   // 깊은 복사 진행 
-            fcopy(cDeep);
+            fCopy(cDeep);
         }
 
-        private void fcopy(cCopySample cData)
+        private void fCopy(cCopySample cData)
         {
             cData.iCopy = int.Parse(tboxInt.Text);
             cData.charCopy = char.Parse(tboxChar.Text);
